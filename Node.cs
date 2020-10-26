@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-
 namespace DataStructures_LinkedList
 {
     /// <summary>
@@ -10,7 +9,6 @@ namespace DataStructures_LinkedList
     {
         public int data;
         public Node next;
-
         /// <summary>
         /// Creating a parameterised Constructor
         /// </summary>
