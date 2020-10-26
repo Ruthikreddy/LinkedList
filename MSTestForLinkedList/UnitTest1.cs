@@ -20,7 +20,7 @@ namespace MsTestLinkedList
             //Act
             bool actual = list.Search(searchData);
             //Assert
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

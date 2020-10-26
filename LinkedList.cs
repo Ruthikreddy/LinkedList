@@ -98,6 +98,7 @@ namespace DataStructures_LinkedList
                     temp = temp.next;
                 }
             }
+
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace DataStructures_LinkedList
             {
                 if (temp.data == searchData)
                 {
-                    Console.WriteLine("Node is present");
+                    Console.WriteLine("Node {0} is present", temp.data);
                     return true;
                 }
                 temp = temp.next;
