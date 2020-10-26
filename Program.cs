@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace DataStructures_LinkedList
 {/// <summary>
 /// Program Class
@@ -12,6 +13,8 @@ namespace DataStructures_LinkedList
             list.AppendLast(56);
             list.AppendLast(70);
             list.InsertInBetween(30);
+            list.Display();
+            list.Pop();
             list.Display();
 
         }
