@@ -96,8 +96,10 @@ namespace DataStructures_LinkedList
                 {
                     Console.WriteLine(temp.data);
                     temp = temp.next;
+
                 }
             }
+
         }
 
         /// <summary>
@@ -184,6 +186,7 @@ namespace DataStructures_LinkedList
             Console.WriteLine("Node is absent");
             return false;
         }
+
         /// <summary>
         /// Deleting the Node
         /// UC9
@@ -200,6 +203,46 @@ namespace DataStructures_LinkedList
             }
             temp.next = temp.next.next;
             Console.WriteLine("The Node with data {0} is deleted", deleteData);
+        }
+        /// <summary>
+        /// Adding elements in ascending order
+        /// </summary>
+        /// <param name="newData"></param>
+        public void AddSortedElements(int newData)
+        {
+            ///checking if head is null then attaching the newNode to it 
+            ///otherwise if not empty then if new data less than head then inserting before it 
+            ///otherwise iterating through temp and finding out which element is just before newData using previous node 
+            ///then creating a link between previous node
+            Node newNode = new Node(newData);
+            newNode.next = null;
+            if (this.head == null)
+            {
+                this.head = newNode;
+                head.next = null;
+                return;
+            }
+            if (newData < head.data)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+                ///after iterating node node will have to be inserted between the previous node and temp
+                ///previousnode will help us to create a link with new node
+                ///followed the same way we used in inserting between two elements
+                Node temp = this.head;
+                Node previousNode = this.head;
+                while (temp != null && temp.data < newData)
+                {
+                    previousNode = temp;
+                    temp = temp.next;
+
+                }
+                newNode.next = previousNode.next;
+                previousNode.next = newNode;
+            }
         }
     }
 }
