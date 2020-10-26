@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+
 namespace DataStructures_LinkedList
 {   /// <summary>
     /// Creating LinkedList
@@ -31,6 +32,7 @@ namespace DataStructures_LinkedList
                 lastNode.next = newNode;
             }
         }
+
         /// <summary>
         /// Identifying the last Node
         /// UC1,UC3
@@ -47,6 +49,7 @@ namespace DataStructures_LinkedList
             }
             return temp;
         }
+
         /// <summary>
         /// Inserting in the begining 
         /// UC2
@@ -70,6 +73,7 @@ namespace DataStructures_LinkedList
                 this.head = newNode;
             }
         }
+
         /// <summary>
         /// displaying the Linked List
         /// </summary>
@@ -94,6 +98,28 @@ namespace DataStructures_LinkedList
                     temp = temp.next;
                 }
             }
+
+        }
+        /// <summary>
+        /// Inserting data in between nodes
+        /// </summary>
+        /// <param name="newData"></param>
+        public void InsertInBetween(int newData)
+        {
+            ///Creating a new node
+            ///Iterating temp till it reaches the node after which you want to insert
+            ///Creating a link with that node
+            Console.WriteLine("Insert the node data you want insert after");
+            int addData = Convert.ToInt32(Console.ReadLine());
+            Node newNode = new Node(newData);
+            Node temp = this.head;
+            while (temp.data != addData)
+            {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+
         }
     }
 }
